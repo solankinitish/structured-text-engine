@@ -1,5 +1,4 @@
 from app.utils.logger import get_logger
-from app.exceptions import InvalidInputError
 from app.models.schemas import TextRequest, TextResponse
 
 class TextService:
