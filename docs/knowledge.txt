@@ -1,0 +1,5 @@
+Python is a high-level programming language.
+
+FastAPI is a modern web framework for building APIs with Python.
+
+Large Language Models (LLMs) can generate text and answer questions.
