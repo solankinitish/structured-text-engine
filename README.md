@@ -1,8 +1,27 @@
-Structured Text Engine
+# StructuredTextEngine
 
-An extensible LLM backend architecture with:
+StructuredTextEngine is a Retrieval-Augmented Generation (RAG) backend built with FastAPI.
 
-- provider abstraction
-- prompt management
-- configurable LLM providers
-- modular service architecture
+## Features
+
+- Semantic document retrieval using sentence embeddings
+- Retrieval Augmented Generation (RAG)
+- Modular LLM provider architecture
+- Prompt management layer
+- Clean service / controller backend architecture
+
+## Tech Stack
+
+- FastAPI
+- Sentence Transformers
+- Groq LLM API
+- Python
+
+## Architecture
+
+User Query
+-> Retriever
+-> Context Construction
+-> Prompt Builder
+-> LLM Generation
+-> Response
