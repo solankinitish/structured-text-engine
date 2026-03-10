@@ -1,10 +1,12 @@
 from fastapi import APIRouter
 from app.controllers.text_controller import TextController
 from app.models.schemas import TextRequest, TextResponse
+from app.core.container import Container
 
 router = APIRouter()
 
-controller = TextController()
+container = Container()
+controller = TextController(container.text_service)
 
 
 @router.post("/process", response_model=TextResponse)

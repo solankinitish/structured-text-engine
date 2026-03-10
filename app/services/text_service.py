@@ -31,14 +31,25 @@ class TextService:
         # retrieve context
         documents = self.retriever.retrieve(query)
 
-        context = "\n".join(documents)
+        self.logger.info(f"Retrieved documents: {documents}")
+
+        if not documents or len(documents) == 0:
+            return TextResponse(result="I don't know based on the available context.")
+
+        context = "\n".join(doc["text"] for doc in documents)
+
+        self.logger.info(f"Context used:\n{context}")
 
         # build prompt with context
-        prompt_input = f"Context:\n{context}\n\nQuestion:\n{query}"
+        prompt_input = f"{context}\n\nQuestion:\n{query}"
 
-        prompt = self.prompt_manager.get_prompt("rewrite", prompt_input)
+        prompt = self.prompt_manager.get_prompt("qa", prompt_input)
+
+        self.logger.info(f"Prompt sent to LLM:\n{prompt}")
 
         output = self.llm_client.generate(prompt)
+
+        self.logger.info(f"LLM response: {output}")
 
         return TextResponse(result=output)
  

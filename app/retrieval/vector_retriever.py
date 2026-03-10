@@ -1,19 +1,33 @@
-import numpy as np
+from app.retrieval.vector_store import VectorStore
+from app.retrieval.reranker import Reranker
 
 
 class VectorRetriever:
 
     def __init__(self, documents, embedding_service):
-        self.documents = documents
         self.embedding_service = embedding_service
+        self.vector_store = VectorStore()
+        self.reranker = Reranker(embedding_service)
 
-        self.doc_embeddings = embedding_service.embed(documents)
+        chunks = []
+
+        for i, doc in enumerate(documents):
+            chunks.append({
+                "text": doc,
+                "metadata": {"chunk_id": i}
+            })
+
+        embeddings = embedding_service.embed(documents)
+
+        self.vector_store.add_documents(chunks, embeddings)
     
     def retrieve(self, query, top_k=3):
         query_embedding = self.embedding_service.embed([query])[0]
 
-        scores = np.dot(self.doc_embeddings, query_embedding)
+        docs = self.vector_store.search(query_embedding, k=10)
 
-        top_indices = np.argsort(scores)[::-1][:top_k]
+        texts = [doc["text"] for doc in docs]
 
-        return [self.documents[i] for i in top_indices]
+        reranked = self.reranker.rerank(query, docs, top_k)
+
+        return reranked
