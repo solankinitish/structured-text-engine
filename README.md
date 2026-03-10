@@ -1,7 +1,22 @@
 # StructuredTextEngine
 
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-green)
+![RAG](https://img.shields.io/badge/Architecture-RAG-purple)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
 StructuredTextEngine is a **Retrieval-Augmented Generation (RAG) backend** built with FastAPI.  
 It retrieves relevant knowledge from a vector database and uses that context to generate grounded responses with an LLM.
+
+---
+
+## What This Project Demonstrates
+
+- Building a **RAG pipeline from scratch**
+- Using **vector embeddings for semantic retrieval**
+- Implementing **retrieval + reranking**
+- Designing a **modular LLM backend architecture**
+- Integrating **LLMs with FastAPI services**
 
 ---
 
