@@ -6,7 +6,6 @@ from app.retrieval.embedding_service import EmbeddingService
 from app.retrieval.vector_retriever import VectorRetriever
 
 from app.services.text_service import TextService
-from app.llm.provider_factory import create_provider
 
 
 class Container:
@@ -20,8 +19,7 @@ class Container:
 
         retriever = VectorRetriever(documents, embedding_service)
 
-        provider = create_provider()
-        llm_client = LLMClient(provider)
+        llm_client = LLMClient()
 
         prompt_manager = PromptManager()
 

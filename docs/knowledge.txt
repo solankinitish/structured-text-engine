@@ -3,3 +3,17 @@ Python is a high-level programming language.
 FastAPI is a modern web framework for building APIs with Python.
 
 Large Language Models (LLMs) can generate text and answer questions.
+
+ChromaDB is a vector database used for storing and retrieving embeddings.
+
+Retrieval-Augmented Generation (RAG) combines retrieval and generation to produce grounded answers.
+
+Sentence Transformers are used to generate dense vector embeddings for semantic search.
+
+Reranking improves retrieval quality by scoring retrieved documents against the query.
+
+Embeddings are numerical representations of text that capture semantic meaning.
+
+FastAPI supports automatic API documentation via Swagger UI at /docs.
+
+Vector search finds semantically similar documents using cosine similarity.
