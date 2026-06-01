@@ -1,8 +1,8 @@
 # StructuredTextEngine
 **Fully local RAG backend — semantic retrieval, cosine reranking, and grounded LLM inference**  
-Built from first principles · No framework abstraction
+**Built from first principles · No framework abstraction**
 
-<img width="2529" height="1354" alt="FastAPI Backend" src="https://github.com/user-attachments/assets/7f71da35-0fb9-48aa-b7ad-c594cfaa9396" />
+<img width="1366" height="1262" alt="FastAPI Backend" src="https://github.com/user-attachments/assets/ab8322a2-63a9-4f2f-a323-2b045a2f696f" />
 
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
